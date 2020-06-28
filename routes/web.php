@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+*/
+
+Route::get('/', 'LoginController@index');
+Route::get('/Escritorio', 'DesktopController@index');
+Route::get('/Error', 'DesktopController@error');
