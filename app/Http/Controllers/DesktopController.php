@@ -6,13 +6,8 @@ use Illuminate\Http\Request;
 
 class DesktopController extends Controller
 {
-    public function index()
+    public function Index()
     {
        return view('Desktop.index');
-    }
-
-    public function Error()
-    {
-        return view('Desktop.error');
     }
 }

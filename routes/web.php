@@ -19,6 +19,5 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', 'LoginController@index');
-Route::get('/Escritorio', 'DesktopController@index');
-Route::get('/Error', 'DesktopController@error');
+Route::get('/', 'LoginController@Index');
+Route::get('/escritorio', 'DesktopController@Index');
