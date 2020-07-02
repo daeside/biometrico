@@ -1,0 +1,26 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^panel\.tecnotronik\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.panel\.tecnotronik\.com$
+RewriteRule ^/?$ "https\:\/\/panel\.tecnotronik\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_REFERER} !^http://panel.tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://panel.tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.panel.tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.panel.tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://panel.tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://panel.tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.panel.tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.panel.tecnotronik.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.tecnotronik.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.tecnotronik.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+

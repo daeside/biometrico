@@ -1,0 +1,63 @@
+[09-Sep-2019 04:19:21 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:20:20 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:22:14 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:23:06 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:24:23 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:29:24 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:30:56 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:34:47 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ')' in /home/tecnotr1/public_html/panel/Login/login.php on line 5
+[09-Sep-2019 04:43:35 UTC] PHP Notice:  Undefined variable: connection in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:43:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/tecnotr1/public_html/panel/Login/login.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:47:22 UTC] PHP Notice:  Undefined variable: connection in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:47:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/tecnotr1/public_html/panel/Login/login.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:48:35 UTC] PHP Notice:  Undefined variable: connection in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:48:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/tecnotr1/public_html/panel/Login/login.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:50:11 UTC] PHP Notice:  Undefined variable: connection in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:50:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/tecnotr1/public_html/panel/Login/login.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:51:01 UTC] PHP Notice:  Undefined variable: connection in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:51:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/tecnotr1/public_html/panel/Login/login.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:52:24 UTC] PHP Notice:  Undefined variable: connection in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 04:52:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/tecnotr1/public_html/panel/Login/login.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 22
+[09-Sep-2019 05:07:47 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/tecnotr1/public_html/panel/Login/login.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 35
+[09-Sep-2019 05:08:46 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/tecnotr1/public_html/panel/Login/login.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 35
+[09-Sep-2019 05:09:55 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/tecnotr1/public_html/panel/Login/login.php on line 40
+[09-Sep-2019 05:10:22 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/tecnotr1/public_html/panel/Login/login.php on line 40
+[09-Sep-2019 05:10:34 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/tecnotr1/public_html/panel/Login/login.php on line 40
+[09-Sep-2019 05:15:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_array() in /home/tecnotr1/public_html/panel/Login/login.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 32
+[09-Sep-2019 05:15:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_array() in /home/tecnotr1/public_html/panel/Login/login.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/tecnotr1/public_html/panel/Login/login.php on line 32
+[09-Sep-2019 05:16:26 UTC] PHP Notice:  Trying to get property of non-object in /home/tecnotr1/public_html/panel/Login/login.php on line 38
+[09-Sep-2019 05:16:46 UTC] PHP Notice:  Trying to get property of non-object in /home/tecnotr1/public_html/panel/Login/login.php on line 38
+[09-Sep-2019 05:17:16 UTC] PHP Notice:  Trying to get property of non-object in /home/tecnotr1/public_html/panel/Login/login.php on line 38
+[09-Sep-2019 05:17:29 UTC] PHP Notice:  Trying to get property of non-object in /home/tecnotr1/public_html/panel/Login/login.php on line 38
+[09-Sep-2019 05:21:03 UTC] PHP Notice:  Undefined index: name in /home/tecnotr1/public_html/panel/Login/login.php on line 43
+[09-Sep-2019 05:48:06 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/tecnotr1/public_html/panel/Login/close_sesion.php on line 3
