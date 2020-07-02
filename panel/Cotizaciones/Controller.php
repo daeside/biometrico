@@ -27,6 +27,10 @@ if (isset($_POST['form']) && isset($_POST['type']))
             echo ActualizarProducto($data);
         break;
 
+        case "add-new-product":
+            var_dump(AgregarProducto($data));
+        break;
+
         default:
         break;
     }
@@ -92,6 +96,12 @@ function ActualizarProducto($data)
 {
     $obj = json_decode(json_encode($data));
     return Connection::UpdateProduct($obj->idCotizacion, $obj->idProducto, $obj->newCosto, $obj->newUtilidad);
+}
+
+function AgregarProducto($data)
+{
+    $obj = json_decode(json_encode($data));
+    return Connection::AddCotizationProduct($obj->cotizacion, $obj->producto, $obj->cantidad, $obj->costo, $obj->utilidad);
 }
 
 ?>

@@ -208,6 +208,13 @@ class Connection
         $execute = mysqli_query(Connection::DbConnection(), $query);
         return $execute;
     }
+
+    public static function AddCotizationProduct($idcotizacion, $idproducto, $cantidad, $costo, $utilidad)
+    {
+        $query =  "INSERT INTO cotizaciones_items(fk_id_cotizacion, fk_id_producto, quantity, utility, cost) VALUES($idcotizacion, $idproducto, $cantidad, $utilidad, $costo)";
+        $execute = mysqli_query(Connection::DbConnection(), $query);
+        return $execute;
+    }
 }
 
 ?>
