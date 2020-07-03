@@ -21,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/', 'LoginController@Index');
 Route::get('/escritorio', 'DesktopController@Index');
+Route::get('/clientes/ver', 'ClientsController@ViewClients');
+Route::get('/clientes/get', 'ClientsController@GetClients');
+Route::get('/clientes/agregar', 'ClientsController@ViewAddClient');
