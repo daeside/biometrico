@@ -23,21 +23,21 @@
                     <div class="form-group">
                         <label for="name">Razón Social:</label>
                         <input type="text" class="form-control" maxlength="50" v-model="name" />
-                        <label for="name" class="validate-msg">Este campo es requerido</label>
+                        <span class="validate-msg" v-if="submitted && !$v.name.required">Este campo es requerido</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="alias">Alias:</label>
                         <input type="text" class="form-control" maxlength="50" v-model="alias" />
-                        <label for="name" class="validate-msg">Este campo es requerido</label>
+                        <span class="validate-msg" v-if="submitted && !$v.alias.required">Este campo es requerido</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="name">R.F.C:</label>
                         <input type="text" class="form-control" maxlength="15" v-model="rfc" />
-                        <label for="name" class="validate-msg">Este campo es requerido</label>
+                        <span class="validate-msg" v-if="submitted && !$v.rfc.required">Este campo es requerido</span>
                     </div>
                 </div>
             </div>
@@ -58,40 +58,66 @@
 <script>
 
 Vue.use(window.vuelidate.default)
-var required = window.validators.required
+Vue.use(Toasted)
+let required = window.validators.required
 
 new Vue({
     el: '#client-form',
     data: {
         name: '',
         alias: '',
-        rfc: ''
+        rfc: '',
+        submitted: false
     },
     validations: {    
         name:{
-            required
+            required: required
         },
         alias:{
-            required
+            required: required
         },
         rfc:{
-            required
+            required: required
         }
     },
     methods: {
         SaveClient: function () {
+
             if(this.$v.$invalid){
-                alert("Datos invalidos");
+                this.submitted = true;
             }
             else{
                 axios.post("{{ url('/clientes/add') }}", { name: this.name, alias: this.alias, rfc: this.rfc }, {
                     headers: {}
                 })
                 .then((response) => {
-                    console.log(response);
+                    if(response.data){
+                        this.$toasted.show("Nuevo cliente creado", { 
+	                        theme: "toasted-primary", 
+	                        position: "top-right", 
+                            duration : 2000,
+                            type: "success",
+                            onComplete: function(){
+                                location.reload();
+                            }
+                        });
+                    }
+                    else{
+                        this.$toasted.show("No se creo el cliente", { 
+	                        theme: "toasted-primary", 
+	                        position: "top-right", 
+                            duration : 3000,
+                            type: "error"
+                        });
+                    }
                 })
                 .catch((ex) => {
-                    console.log(ex.message);
+                    this.$toasted.show(ex.message, { 
+	                    theme: "toasted-primary", 
+	                    position: "top-right", 
+                        duration : 3000,
+                        type: "error"
+                    });
                 })
             }
         }

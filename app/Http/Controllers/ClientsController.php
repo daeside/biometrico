@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Clients;
+use \App\Helpers\ValidatorHelper;
 
 class ClientsController extends Controller
 {
@@ -25,6 +26,13 @@ class ClientsController extends Controller
 
     public function AddClient(Request $data)
     {
-        return $data;
+        $isValid = ValidatorHelper::ValidateForm($data, ['name' => 'required', 'alias' => 'required', 'rfc' => 'required']);
+        
+        if($isValid)
+        {
+            $success = Clients::AddClient($data);
+            return $success;
+        }
+        return response()->make($isValid, 400);
     }
 }

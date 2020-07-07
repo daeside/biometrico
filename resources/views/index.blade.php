@@ -15,6 +15,8 @@
     <script src="{{ asset('js/axios.min.js') }}"></script>
     <script src="{{ asset('js/vuelidate.min.js') }}"></script>
     <script src="{{ asset('js/validators.min.js') }}"></script>
+    <script src="{{ asset('js/vue-swal.min.js') }}"></script>
+    <script src="{{ asset('js/vue-toasted.min.js') }}"></script>
     <script src="{{ asset('js/functions.js') }}"></script>
   </head>
   <body class="bg-gray-100" id="page-top">

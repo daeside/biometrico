@@ -4,7 +4,6 @@ namespace App\Models;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use \stdClass;
 use Carbon\Carbon;
 
@@ -30,8 +29,15 @@ class Clients extends Model
         return $clients;
     }
 
-    public static function AddClient(Request $data)
+    public static function AddClient($data)
     {
-        return $data;
+        $insert = DB::table('clients')->insert(
+            [
+                'name' => $data->name, 
+                'alias' => $data->alias,
+                'rfc' => $data->rfc
+            ]
+        );
+        return $insert;
     }
 }
