@@ -11,3 +11,38 @@
 .user-icon-bar{
     font-size: 25px;;
 }
+
+.table, .fa-trash, .fa-edit{
+    font-size: 14px;
+}
+
+.fa-trash, .fa-edit{
+    padding: 5px 10px;
+}
+
+.fa-trash .con, .fa-pencil-edit .con{
+    padding: 0;
+}
+
+.dt-center{
+    text-align: center;
+}
+
+.form-container{
+    justify-content: center;
+}
+
+.dt-center .btn-icon-split{
+    margin: 0 3px 0 3px;
+}
+
+.validate-msg{
+    color:red;
+    font-size: 14px;
+}
+
+.validate-msg:before {
+    content: "* ";
+    color: red;
+}
+

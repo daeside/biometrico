@@ -22,4 +22,9 @@ class ClientsController extends Controller
     {
         return view('Clients.add');
     }
+
+    public function AddClient(Request $data)
+    {
+        return $data;
+    }
 }
