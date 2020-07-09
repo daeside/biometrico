@@ -26,13 +26,22 @@ class ClientsController extends Controller
 
     public function AddClient(Request $data)
     {
-        $isValid = ValidatorHelper::ValidateForm($data, ['name' => 'required', 'alias' => 'required', 'rfc' => 'required']);
-        
+        $rules = [
+            'name' => 'required', 
+            'alias' => 'required', 
+            'rfc' => 'required', 
+            'start' => 'required', 
+            'end' => 'required'
+        ];
+        $isValid = ValidatorHelper::ValidateForm($data, $rules);
+        /*
         if($isValid)
         {
             $success = Clients::AddClient($data);
             return $success;
         }
         return response()->make($isValid, 400);
+        */
+        return $isValid;
     }
 }

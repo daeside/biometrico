@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="{{ asset('font-awesome/css/all.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     <!--link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/icon.png') }}"/-->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/vue.min.js') }}"></script>
+    {{--<script src="{{ asset('js/vue.min.js') }}"></script>--}}
+    <script src="{{ asset('js/vue.js') }}"></script>
     <script src="{{ asset('js/axios.min.js') }}"></script>
     <script src="{{ asset('js/vuelidate.min.js') }}"></script>
     <script src="{{ asset('js/validators.min.js') }}"></script>
     <script src="{{ asset('js/vue-swal.min.js') }}"></script>
     <script src="{{ asset('js/vue-toasted.min.js') }}"></script>
+    <script src="{{ asset('js/v-calendar.umd.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/functions.js') }}"></script>
   </head>
   <body class="bg-gray-100" id="page-top">

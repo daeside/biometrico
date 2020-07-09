@@ -42,7 +42,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Servicios</span>
+          <span>Opciones</span>
         </a>
       </li>
       <!-- Divider -->
@@ -74,6 +74,20 @@
       </li>
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployes" aria-expanded="true" aria-controls="collapseEmployes">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Empleados</span>
+        </a>
+        <div id="collapseEmployes" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Empleados:</h6>
+            <a class="collapse-item" href="#">Ver empleados</a>
+            <a class="collapse-item" href="#">Agregar empleado</a>
+          </div>
+        </div>
+      </li>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Configuración</span>
@@ -81,12 +95,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Configuración:</h6>
-            <a class="collapse-item" href="#">Empresa</a>
-            <a class="collapse-item" href="#">Códigos de pago</a>
             <a class="collapse-item" href="#">Horarios</a>
             <a class="collapse-item" href="#">Turnos</a>
             <a class="collapse-item" href="#">Departamentos</a>
-            <a class="collapse-item" href="#">Empleados</a>
           </div>
         </div>
       </li>

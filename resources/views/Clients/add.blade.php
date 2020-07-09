@@ -19,25 +19,42 @@
       <div class="card-body">
         <form class="user" action="#" id="client-form">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">Razón Social:</label>
+                        <label>Razón Social:</label>
                         <input type="text" class="form-control" maxlength="50" v-model="name" />
                         <span class="validate-msg" v-if="submitted && !$v.name.required">Este campo es requerido</span>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label for="alias">Alias:</label>
+                        <label>Alias:</label>
                         <input type="text" class="form-control" maxlength="50" v-model="alias" />
                         <span class="validate-msg" v-if="submitted && !$v.alias.required">Este campo es requerido</span>
                     </div>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <div class="row">
+            <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">R.F.C:</label>
+                        <label>R.F.C:</label>
                         <input type="text" class="form-control" maxlength="15" v-model="rfc" />
                         <span class="validate-msg" v-if="submitted && !$v.rfc.required">Este campo es requerido</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Vigencia:</label>
+                        <div>
+                            <v-date-picker 
+                                v-model="range"
+                                :mode="dateOptions.mode"
+                                :min-date="dateOptions.minDate"
+                                :attributes="dateOptions.attrs"
+                                :input-props="dateOptions.inputProps"
+                             />
+                        </div>
+                        <span class="validate-msg" v-if="submitted && !$v.range.required">Este campo es requerido</span>
                     </div>
                 </div>
             </div>
@@ -59,25 +76,47 @@
 
 Vue.use(window.vuelidate.default)
 Vue.use(Toasted)
-let required = window.validators.required
 
-new Vue({
+let rules = {
+    required: window.validators.required
+};
+
+let form = new Vue({
     el: '#client-form',
     data: {
         name: '',
         alias: '',
         rfc: '',
+        range: '',
+        dateOptions: {
+            minDate: new Date(),
+            mode: 'range',
+            attrs: [
+                {
+                    key: 'today',
+                    highlight: true,
+                    dates: new Date(),
+                }
+            ],
+            inputProps: {
+                readonly: true,
+                class: 'form-control'
+            }
+        },
         submitted: false
     },
     validations: {    
         name:{
-            required: required
+            required: rules.required
         },
         alias:{
-            required: required
+            required: rules.required
         },
         rfc:{
-            required: required
+            required: rules.required
+        },
+        range:{
+            required: rules.required
         }
     },
     methods: {
@@ -87,11 +126,20 @@ new Vue({
                 this.submitted = true;
             }
             else{
-                axios.post("{{ url('/clientes/add') }}", { name: this.name, alias: this.alias, rfc: this.rfc }, {
+                let request = {
+                    name: this.name, 
+                    alias: this.alias, 
+                    rfc: this.rfc, 
+                    start: this.range.start, 
+                    end: this.range.end
+                };
+                axios.post("{{ url('/clientes/add') }}", request, {
                     headers: {}
                 })
                 .then((response) => {
                     if(response.data){
+                        console.log(response);
+                        /*
                         this.$toasted.show("Nuevo cliente creado", { 
 	                        theme: "toasted-primary", 
 	                        position: "top-right", 
@@ -101,6 +149,7 @@ new Vue({
                                 location.reload();
                             }
                         });
+                        */
                     }
                     else{
                         this.$toasted.show("No se creo el cliente", { 
