@@ -52,6 +52,8 @@
                                 :min-date="dateOptions.minDate"
                                 :attributes="dateOptions.attrs"
                                 :input-props="dateOptions.inputProps"
+                                :popover="dateOptions.display"
+                                :masks="{ data: ['YYYY-MM-DD'] }"
                              />
                         </div>
                         <span class="validate-msg" v-if="submitted && !$v.range.required">Este campo es requerido</span>
@@ -101,7 +103,8 @@ let form = new Vue({
             inputProps: {
                 readonly: true,
                 class: 'form-control'
-            }
+            },
+            display: { visibility: 'click' }
         },
         submitted: false
     },
@@ -130,16 +133,14 @@ let form = new Vue({
                     name: this.name, 
                     alias: this.alias, 
                     rfc: this.rfc, 
-                    start: this.range.start, 
-                    end: this.range.end
+                    start: moment(this.range.start).format('YYYY-MM-DD'), 
+                    end: moment(this.range.end).format('YYYY-MM-DD')
                 };
                 axios.post("{{ url('/clientes/add') }}", request, {
                     headers: {}
                 })
                 .then((response) => {
                     if(response.data){
-                        console.log(response);
-                        /*
                         this.$toasted.show("Nuevo cliente creado", { 
 	                        theme: "toasted-primary", 
 	                        position: "top-right", 
@@ -149,7 +150,6 @@ let form = new Vue({
                                 location.reload();
                             }
                         });
-                        */
                     }
                     else{
                         this.$toasted.show("No se creo el cliente", { 

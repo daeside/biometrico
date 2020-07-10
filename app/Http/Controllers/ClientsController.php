@@ -30,18 +30,16 @@ class ClientsController extends Controller
             'name' => 'required', 
             'alias' => 'required', 
             'rfc' => 'required', 
-            'start' => 'required', 
-            'end' => 'required'
+            'start' => 'required|date_format:Y-m-d', 
+            'end' => 'required|date_format:Y-m-d'
         ];
         $isValid = ValidatorHelper::ValidateForm($data, $rules);
-        /*
+
         if($isValid)
         {
             $success = Clients::AddClient($data);
             return $success;
         }
         return response()->make($isValid, 400);
-        */
-        return $isValid;
     }
 }

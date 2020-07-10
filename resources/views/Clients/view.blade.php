@@ -16,6 +16,7 @@
             <th>Razon social</th>
             <th>R.F.C.</th>
             <th>Alta</th>
+            <th>Vigencia</th>
             <th>Opciones</th>
           </tr>
         </thead>
@@ -39,7 +40,8 @@ ready(function(){
                 item.nombre, 
                 item.alias, 
                 item.rfc, 
-                item.fechaAlta, 
+                item.fechaAlta,
+                item.vigency, 
                 "<a href='#' class='btn btn-info btn-icon-split'><i class='fas fa-edit'></i></a><a href='#' class='btn btn-danger btn-icon-split'><i class='fas fa-trash'></i></a>"
             ]).draw()
         );

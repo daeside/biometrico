@@ -18,6 +18,7 @@
     <script src="{{ asset('js/vue-swal.min.js') }}"></script>
     <script src="{{ asset('js/vue-toasted.min.js') }}"></script>
     <script src="{{ asset('js/v-calendar.umd.min.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/functions.js') }}"></script>
   </head>
