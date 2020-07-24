@@ -25,3 +25,5 @@ Route::get('/clientes/ver', 'ClientsController@ViewClients');
 Route::get('/clientes/get', 'ClientsController@GetClients');
 Route::get('/clientes/agregar', 'ClientsController@ViewAddClient');
 Route::post('/clientes/add', 'ClientsController@AddClient');
+Route::get('/clientes/ver/editar/{id}', 'ClientsController@ViewUpdate');
+Route::delete('/eliminar-cliente/{id}', 'ClientsController@DeleteProduct');

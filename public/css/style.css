@@ -8,6 +8,42 @@
     background-image: linear-gradient(rgba(255,0,0,0) 0%,rgba(255,0,0,0) 0%);
 }
 
+.table td, .table th
+{
+    padding: 10px !important;
+}
+
+.fa-edit{
+    color: #36b9cc;
+}
+
+.fa-trash{
+    color: #e74a3b;
+}
+
+.dt-center{
+    text-align: center;
+}
+
+#search-products{
+    margin-top: 2em;
+}
+
+@media screen and (max-width:767px) {
+    #search-products{
+        margin-top: auto;
+    }
+
+    .btn-container{
+        text-align: center;
+    }
+}
+
+.table-responsive{
+    margin-top: 1.5em;
+}
+
+/*
 .user-icon-bar{
     font-size: 25px;;
 }
@@ -35,6 +71,7 @@
 .dt-center .btn-icon-split{
     margin: 0 3px 0 3px;
 }
+*/
 
 .validate-msg{
     color:red;

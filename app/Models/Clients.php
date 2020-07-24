@@ -9,9 +9,13 @@ use Carbon\Carbon;
 
 class Clients extends Model
 {
-    public static function GetClients()
+    public static function GetClients($id = 0)
     {
-        $data = DB::table('clients')->select('id', 'name', 'alias', 'rfc', 'date_add', 'status', 'vigency_date_end')->get();
+        $condition = $id == 0 ? '<>' : '=';
+        $data = DB::table('clients')
+                ->select('id', 'name', 'alias', 'rfc', 'date_add', 'status', 'vigency_date_start', 'vigency_date_end')
+                ->where([['status', '=', true], ['id', $condition, $id]])
+                ->get();
         $clients = [];
 
         foreach($data as $key => $value)
@@ -23,7 +27,8 @@ class Clients extends Model
             $obj->rfc = $value->rfc;
             $obj->fechaAlta = Carbon::parse($value->date_add)->format("d/M/Y H:m");
             $obj->status = $value->status;
-            $obj->vigency = Carbon::parse($value->vigency_date_end)->format("d/M/Y");
+            $obj->start = Carbon::parse($value->vigency_date_start)->format("d/M/Y");
+            $obj->end = Carbon::parse($value->vigency_date_end)->format("d/M/Y");
 
             array_push($clients, $obj);
         }
@@ -40,5 +45,13 @@ class Clients extends Model
             'vigency_date_end' => Carbon::parse($data->end)->format("Y-m-d")
         ]);
         return $insert;
+    }
+
+    public static function DisableProduct($id)
+    {
+        $data = DB::table('clients')
+                ->where('id', $id)
+                ->update(['status' => false]);
+        return $data;
     }
 }

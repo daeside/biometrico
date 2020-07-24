@@ -13,6 +13,13 @@ class ClientsController extends Controller
         return view('Clients.view');
     }
 
+    public function ViewUpdate($id)
+    {
+        $cliente = Clients::GetClients($id);
+        $data = json_decode(json_encode($cliente[0]));
+        return view('Clients.edit', ['data' => $data]);
+    }
+
     public function GetClients()
     {
         $clients = Clients::GetClients();
@@ -41,5 +48,11 @@ class ClientsController extends Controller
             return $success;
         }
         return response()->make($isValid, 400);
+    }
+
+    public function DeleteProduct($id)
+    {
+        $success = Clients::DisableProduct($id);
+        return $success;
     }
 }

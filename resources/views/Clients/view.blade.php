@@ -16,8 +16,10 @@
             <th>Razon social</th>
             <th>R.F.C.</th>
             <th>Alta</th>
-            <th>Vigencia</th>
-            <th>Opciones</th>
+            <th>Desde</th>
+            <th>Hasta</th>
+            <th>Editar</th>
+            <th>Borrar</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +32,29 @@
 <!-- /.container-fluid -->
 <script>
 
+Vue.use(Toasted)
+
+function DisableProduct(id)
+{
+    event.preventDefault();
+
+    if(confirm("¿Realmente desea borrar el producto?"))
+    {
+        axios.delete("{{ url('/eliminar-cliente') }}/" + id)
+        .then(response => {
+            console.log(response);
+            if(response.data)
+            {
+                alert("Se borro correctamente");
+                location.reload();
+            }
+        })
+        .catch(ex => {
+            console.log(ex.message);
+        })
+    }
+}
+
 ready(function(){
     dataTableConfig("clients-table", [{ "className": "dt-center", "targets": [4] }]);
 
@@ -41,8 +66,10 @@ ready(function(){
                 item.alias, 
                 item.rfc, 
                 item.fechaAlta,
-                item.vigency, 
-                "<a href='#' class='btn btn-info btn-icon-split'><i class='fas fa-edit'></i></a><a href='#' class='btn btn-danger btn-icon-split'><i class='fas fa-trash'></i></a>"
+                item.start,
+                item.end, 
+                "<a href='{{ url('/clientes/ver/editar') }}/"+item.id+"' target='_blank'><i class='fas fa-edit'></i></a>",
+                "<a href='#'><i class='fas fa-trash' onclick='DisableProduct("+item.id+");'></i></a>"
             ]).draw()
         );
     })
